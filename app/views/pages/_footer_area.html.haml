@@ -1,0 +1,114 @@
+%footer.footer-area
+  .container
+    .row
+      .col-md-3
+        .f-about
+          = image_tag 'f-logo.png'
+          %p Lorem ipsum dolor sit amet, consectet adipisicing elit. Saepe porro neque a nam nulla quos atque.
+          %ul.list-unstyled.f-contact
+            %li
+              %i.fa.fa-map-marker>
+              795 South Park Avenue, CA 94107
+            %li
+              %i.fa.fa-envelope>
+              enquery@domain.com
+            %li
+              %i.fa.fa-phone>
+              +1 908 875 7678
+          %ul.list-unstyled.list-inline.f-social
+            %li.list-inline-item
+              %a{:href => ""}
+                %i.fa.fa-facebook
+            %li.list-inline-item
+              %a{:href => ""}
+                %i.fa.fa-twitter
+            %li.list-inline-item
+              %a{:href => ""}
+                %i.fa.fa-linkedin
+            %li.list-inline-item
+              %a{:href => ""}
+                %i.fa.fa-google-plus
+            %li.list-inline-item
+              %a{:href => ""}
+                %i.fa.fa-rss
+            %li.list-inline-item
+              %a{:href => ""}
+                %i.fa.fa-youtube
+      .col-md-3
+        .f-service
+          .sec-title
+            %h5 Services
+          %ul.list-unstyled.service-list
+            %li
+              %a{:href => ""}
+                %i.fa.fa-angle-right>
+                Advertisement
+            %li
+              %a{:href => ""}
+                %i.fa.fa-angle-right>
+                Work for us
+            %li
+              %a{:href => ""}
+                %i.fa.fa-angle-right>
+                Post a deal
+            %li
+              %a{:href => ""}
+                %i.fa.fa-angle-right>
+                Agreements
+            %li
+              %a{:href => ""}
+                %i.fa.fa-angle-right>
+                Sms subscription
+            %li
+              %a{:href => ""}
+                %i.fa.fa-angle-right>
+                Conference
+            %li
+              %a{:href => ""}
+                %i.fa.fa-angle-right>
+                Donate us
+      .col-md-3
+        .f-post
+          .sec-title
+            %h5 Latest Post
+          .post-box.d-flex
+            .post-img
+              %a{:href => ""}
+                = image_tag 'post1.jpg'
+            .post-con
+              %p
+                %a{:href => "#"} Lorem ipsum dolor sit...
+              %span Feb 11, 2019
+          .post-box.d-flex
+            .post-img
+              %a{:href => ""}
+                = image_tag 'post2.jpg'
+            .post-con
+              %p
+                %a{:href => "#"} Lorem ipsum dolor sit...
+              %span Feb 11, 2019
+          .post-box.d-flex
+            .post-img
+              %a{:href => ""}
+                = image_tag 'post3.jpg'
+            .post-con
+              %p
+                %a{:href => "#"} Lorem ipsum dolor sit...
+              %span Feb 11, 2019
+      .col-md-3
+        .f-newsltr
+          .sec-title
+            %h5 Newsletter
+          %form.news-letter{:action => "#"}
+            %input{:name => "name", :placeholder => "Your name", :type => "text", :value => ""}
+              %input{:name => "email", :placeholder => "Your email address", :type => "text", :value => ""}
+                %button{:name => "button", :type => "button"} Register
+          .col-md-12
+            .f-menu.d-flex.justify-content-between
+              %a{:href => ""} About Us
+              %a{:href => ""} Archives
+              %a{:href => ""} Terms  Condition
+              %a{:href => ""} Privacy Policy
+              %a{:href => ""} Rss
+              %a{:href => ""} Apps
+              %a{:href => ""} Contact

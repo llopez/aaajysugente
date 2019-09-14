@@ -1,0 +1,13 @@
+%section.logo-area
+  .container
+    .row
+      .col-md-6
+        .logo
+          %a{:href => ""}
+            = image_tag 'logo.png', class: 'img-fluid'
+      .col-md-6
+        .searchbar.text-right
+          %form{:action => "#"}
+            %input{:placeholder => "Search Here...", :required => "", :type => "text"}/
+            %button{:type => "submit"}
+              %i.fa.fa-search
