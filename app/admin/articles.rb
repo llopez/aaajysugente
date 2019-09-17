@@ -4,7 +4,7 @@ ActiveAdmin.register Article do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :body
+  permit_params :title, :body, :image
   #
   # or
   #
@@ -13,4 +13,25 @@ ActiveAdmin.register Article do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+
+  form do |f|
+    f.semantic_errors
+    f.inputs do
+      f.input :title
+      f.input :body
+      f.input :image, as: :file
+    end
+    f.actions
+  end
+
+  show do
+    attributes_table do
+      row :title
+      row :body
+      row :image do |article|
+        image_tag article.image
+      end
+    end
+    # active_admin_comments
+  end
 end
