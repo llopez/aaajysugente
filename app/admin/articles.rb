@@ -27,7 +27,9 @@ ActiveAdmin.register Article do
   show do
     attributes_table do
       row :title
-      row :body
+      row :body do |article|
+        article.body.html_safe
+      end
       row :image do |article|
         image_tag article.image
       end
