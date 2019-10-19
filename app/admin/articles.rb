@@ -18,7 +18,7 @@ ActiveAdmin.register Article do
     f.semantic_errors
     f.inputs do
       f.input :title
-      f.input :body
+      f.input :body, as: :medium_editor
       f.input :image, as: :file
     end
     f.actions
