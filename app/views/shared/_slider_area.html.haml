@@ -3,14 +3,15 @@
     .row
       .col-lg-8.col-md-12.padding-fix-r
         .owl-carousel.owl-slider
-          .slider-content
-            = image_tag 'slider-3.jpg', class: 'img-fluid'
-            .slider-layer
-              %p
-                %a{:href => ""} This handout will help you understand how paragraphs are formed. It is usually composed of several sentences that together develop one.
-              %ul.list-unstyled.list-inline
-                %li.list-inline-item SPORTS
-                %li.list-inline-item February 11, 2019
+          - @articles.each do |article|
+            .slider-content
+              = image_tag article.image, class: 'img-fluid'
+              .slider-layer
+                %p
+                  = link_to article.title, article_path(article)
+                %ul.list-unstyled.list-inline
+                  %li.list-inline-item SPORTS
+                  %li.list-inline-item February 11, 2019
           .slider-content
             = image_tag 'slider-3.jpg', class: 'img-fluid'
             .slider-layer
@@ -19,23 +20,16 @@
               %ul.list-unstyled.list-inline
                 %li.list-inline-item LIFE STYLE
                 %li.list-inline-item February 11, 2019
-          .slider-content
-            = image_tag 'slider-3.jpg', class: 'img-fluid'
-            .slider-layer
-              %p
-                %a{:href => ""} It is usually composed of several sentences that together develop one. It is usually composed of several sentences that together develop one.
-              %ul.list-unstyled.list-inline
-                %li.list-inline-item FOOD
-                %li.list-inline-item February 11, 2019
       .col-lg-4.col-md-12.slider-fix
-        .slider-sidebar.sidebar-o
-          = image_tag 'sl-sidebar-1.jpg', class: 'img-fluid'
-          .sidebar-layer
-            %p
-              %a{:href => ""} It is usually composed of several sentences that together develop one.
-            %ul.list-unstyled.list-inline
-              %li.list-inline-item TECHNOLOGY
-              %li.list-inline-item February 11, 2019
+        - @articles.take(2).each_with_index do |article, index|
+          .slider-sidebar{class: index.zero? ? 'sidebar-o' : ''}
+            = image_tag article.image, class: 'img-fluid'
+            .sidebar-layer
+              %p
+                = link_to article.title, article_path(article)
+              %ul.list-unstyled.list-inline
+                %li.list-inline-item TECHNOLOGY
+                %li.list-inline-item February 11, 2019
         .slider-sidebar
           = image_tag 'sl-sidebar-2.jpg', class: 'img-fluid'
           .sidebar-layer
