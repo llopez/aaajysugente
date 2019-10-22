@@ -21,3 +21,8 @@
  *= require responsive
  *= require_self
  */
+
+
+.slider-area{
+  margin-top: 15px;
+}
