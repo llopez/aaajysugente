@@ -18,7 +18,7 @@ ActiveAdmin.register Article do
     f.semantic_errors
     f.inputs do
       f.input :title
-      f.input :body, as: :medium_editor
+      f.input :body, as: :medium_editor, input_html: { data: { options: '{"spellcheck":false,"toolbar":{"buttons":["bold","italic","underline","anchor","removeFormat","indent","outdent"]}}' } }
       f.input :image, as: :file
     end
     f.actions
