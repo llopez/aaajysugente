@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: 'pages#index'
+
+  resources :articles, only: :show
 end
