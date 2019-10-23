@@ -153,31 +153,6 @@
       .col-lg-4.col-md-12
         .row
           .col-md-12
-            .follow-widget
-              .sec-title
-                %h5 Follow Us
-              %ul.list-unstyled.clearfix
-                %li
-                  %a{:href => ""}
-                    %i.fa.fa-facebook
-                    %p 44,410
-                %li
-                  %a{:href => ""}
-                    %i.fa.fa-twitter
-                    %p 31,219
-                %li
-                  %a{:href => ""}
-                    %i.fa.fa-rss
-                    %p 11,209
-                %li
-                  %a{:href => ""}
-                    %i.fa.fa-linkedin
-                    %p 19,323
-                %li
-                  %a{:href => ""}
-                    %i.fa.fa-google-plus
-                    %p 29,559
-                %li
-                  %a{:href => ""}
-                    %i.fa.fa-youtube
-                    %p 56,717
+            = render 'shared/follow_us_sidebar'
+
+
