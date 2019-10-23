@@ -19,23 +19,16 @@
       .col-md-4
         .f-post
           .sec-title
-            %h5 Latest Post
-          .post-box.d-flex
-            .post-img
-              %a{:href => ""}
-                = image_tag 'post1.jpg'
-            .post-con
-              %p
-                %a{:href => "#"} Lorem ipsum dolor sit...
-              %span Feb 11, 2019
-          .post-box.d-flex
-            .post-img
-              %a{:href => ""}
-                = image_tag 'post2.jpg'
-            .post-con
-              %p
-                %a{:href => "#"} Lorem ipsum dolor sit...
-              %span Feb 11, 2019
+            %h5 Últimas publicaciones
+          - Article.all.take(3).each do |article|
+            .post-box.d-flex
+              .post-img
+                = link_to article_path(article) do
+                  = image_tag article.image
+              .post-con
+                %p
+                  = link_to article.title.truncate(25), article_path(article)
+                %span Feb 11, 2019
           .post-box.d-flex
             .post-img
               %a{:href => ""}
