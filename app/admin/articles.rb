@@ -4,7 +4,7 @@ ActiveAdmin.register Article do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :body, :image
+  permit_params :title, :body, :image, category_ids: []
   #
   # or
   #
@@ -20,6 +20,7 @@ ActiveAdmin.register Article do
       f.input :title
       f.input :body, as: :medium_editor, input_html: { data: { options: '{"spellcheck":false,"toolbar":{"buttons":["bold","italic","underline","anchor","removeFormat","indent","outdent"]}}' } }
       f.input :image, as: :file
+      f.input :categories
     end
     f.actions
   end
