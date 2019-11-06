@@ -6,56 +6,33 @@
           %ul.list-unstyled.list-inline
             %li.list-inline-item
               %a
-                HOME
+                INICIO
                 %i.fa.fa-angle-down
               %ul.dropdown.list-unstyled
-                %li
-                  %a{:href => "index.html"} Home Style 1
-                %li
-                  %a{:href => "02-home-two.html"} Home Style 2
-                %li
-                  %a{:href => "03-home-three.html"} Home Style 3
+                - Category.all.each do |category|
+                  %li= link_to category.name, "#"
             %li.list-inline-item
               %a
-                PAGES
+                FUTBOL PROFESIONAL
                 %i.fa.fa-angle-down
               %ul.dropdown.list-unstyled
-                %li
-                  %a{:href => "04-about-us.html"} About Us
-                %li
-                  %a
-                    Category
-                    %i.fa.fa-angle-right
-                  %ul.dropdown-sub.list-unstyled
-                    %li
-                      %a{:href => "05-category-one.html"} Category Style 1
-                    %li
-                      %a{:href => "06-category-two.html"} Category Style 2
-                    %li
-                      %a{:href => "07-category-three.html"} Category Style 3
-                    %li
-                      %a{:href => "08-category-four.html"} Category Style 4
-                %li
-                  %a
-                    News Details
-                    %i.fa.fa-angle-right
-                  %ul.dropdown-sub.list-unstyled
-                    %li
-                      %a{:href => "09-news-details-one.html"} News Details Style 1
-                    %li
-                      %a{:href => "10-news-details-two.html"} News Details Style 2
-                %li
-                  %a{:href => "12-faq.html"} Faq
-                %li
-                  %a{:href => "11-contact.html"} Contact
-                %li
-                  %a{:href => "13-404.html"} 404
+                -# %li
+                -#   %a
+                -#     Category
+                -#     %i.fa.fa-angle-right
+                -#   %ul.dropdown-sub.list-unstyled
+                -#     %li
+                -#       %a{:href => "05-category-one.html"} Category Style 1
+                -#     %li
+                -#       %a{:href => "06-category-two.html"} Category Style 2
+                -#     %li
+                -#       %a{:href => "07-category-three.html"} Category Style 3
+                -#     %li
+                -#       %a{:href => "08-category-four.html"} Category Style 4
+                - Category.all.each do |category|
+                  %li= link_to category.name, "#"
             %li.list-inline-item
-              %a{:href => ""} POLITICS
-            %li.list-inline-item
-              %a{:href => ""} BUSINESS
-            %li.list-inline-item
-              %a{:href => ""} SPORTS
+              %a{:href => ""} ¿QUIENES SOMOS?
       .col-md-3
         .clock.text-right
           %span#dg-clock

@@ -10,149 +10,57 @@
                   %h5 Últimas noticias
                 / Nav tabs
                 %ul.nav.nav-tabs{:role => "tablist"}
-                  %li.nav-item
-                    %a.nav-link.active{"data-toggle" => "tab", :href => "#tech"} Technology
-                  %li.nav-item
-                    %a.nav-link{"data-toggle" => "tab", :href => "#busi"} Business
-                  %li.nav-item
-                    %a.nav-link{"data-toggle" => "tab", :href => "#spor"} Sports
+                  - Category.all.each_with_index do |category, index|
+                    %li.nav-item
+                      %a.nav-link{"data-toggle" => "tab", :href => "##{category.slug}", class: index == 0 ? 'active' : ''}= category.name
               / Tab panes
               .tab-content
-                #tech.tab-pane.fade.show.active{:role => "tabpanel"}
-                  .row
-                    .col-md-6
-                      .lt-item-bg
-                        = image_tag 'lt-bg-1.jpg', class: 'img-fluid'
-                        %h6
-                          %a{:href => ""} These sentences are selected from various online news.
-                        %ul.list-unstyled.list-inline
-                          %li.list-inline-item Technology
-                          %li.list-inline-item February 11, 2019
-                        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque labore, quam voluptatibus ipsum. Exde tenetur, quasi, provident animi magni voluptas fugit Itaque labore quae ad........
-                    .col-md-6
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-1.jpg'
-                        .img-content
-                          %p
+                - Category.all.each_with_index do |category, index|
+                  .tab-pane.fade.show{:role => "tabpanel", id: category.slug, class: index == 0 ? 'active' : ''}
+                    .row
+                      .col-md-6
+                        .lt-item-bg
+                          = image_tag 'lt-bg-1.jpg', class: 'img-fluid'
+                          %h6
                             %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-2.jpg'
-                        .img-content
-                          %p
-                            %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-3.jpg'
-                        .img-content
-                          %p
-                            %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-4.jpg'
-                        .img-content
-                          %p
-                            %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
-                #busi.tab-pane.fade{:role => "tabpanel"}
-                  .row
-                    .col-md-6
-                      .lt-item-bg
-                        = image_tag 'lt-bg-2.jpg', class: 'img-fluid'
-                        %h6
-                          %a{:href => ""} These sentences are selected from various online news.
-                        %ul.list-unstyled.list-inline
-                          %li.list-inline-item Business
-                          %li.list-inline-item February 11, 2019
-                        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque labore, quam voluptatibus ipsum. Exde tenetur, quasi, provident animi magni voluptas fugit Itaque labore quae ad........
-                    .col-md-6
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-5.jpg'
-                        .img-content
-                          %p
-                            %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-6.jpg'
-                        .img-content
-                          %p
-                            %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-7.jpg'
-                        .img-content
-                          %p
-                            %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-8.jpg'
-                        .img-content
-                          %p
-                            %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
-                #spor.tab-pane.fade{:role => "tabpanel"}
-                  .row
-                    .col-md-6
-                      .lt-item-bg
-                        = image_tag 'lt-bg-3.jpg', class: 'img-fluid'
-                        %h6
-                          %a{:href => ""} These sentences are selected from various online news.
-                        %ul.list-unstyled.list-inline
-                          %li.list-inline-item Sports
-                          %li.list-inline-item February 11, 2019
-                        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque labore, quam voluptatibus ipsum. Exde tenetur, quasi, provident animi magni voluptas fugit Itaque labore quae ad........
-                    .col-md-6
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-9.jpg'
-                        .img-content
-                          %p
-                            %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-10.jpg'
-                        .img-content
-                          %p
-                            %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-11.jpg'
-                        .img-content
-                          %p
-                            %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
-                      .lt-item-sm.d-flex
-                        .lt-img
-                          %a{:href => ""}
-                            = image_tag 'lt-sm-12.jpg'
-                        .img-content
-                          %p
-                            %a{:href => ""} These sentences are selected from various online news.
-                          %span February 11, 2019
+                          %ul.list-unstyled.list-inline
+                            %li.list-inline-item= category.name
+                            %li.list-inline-item February 11, 2019
+                          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque labore, quam voluptatibus ipsum. Exde tenetur, quasi, provident animi magni voluptas fugit Itaque labore quae ad........
+                      .col-md-6
+                        .lt-item-sm.d-flex
+                          .lt-img
+                            %a{:href => ""}
+                              = image_tag 'lt-sm-1.jpg'
+                          .img-content
+                            %p
+                              %a{:href => ""} These sentences are selected from various online news.
+                            %span February 11, 2019
+                        .lt-item-sm.d-flex
+                          .lt-img
+                            %a{:href => ""}
+                              = image_tag 'lt-sm-2.jpg'
+                          .img-content
+                            %p
+                              %a{:href => ""} These sentences are selected from various online news.
+                            %span February 11, 2019
+                        .lt-item-sm.d-flex
+                          .lt-img
+                            %a{:href => ""}
+                              = image_tag 'lt-sm-3.jpg'
+                          .img-content
+                            %p
+                              %a{:href => ""} These sentences are selected from various online news.
+                            %span February 11, 2019
+                        .lt-item-sm.d-flex
+                          .lt-img
+                            %a{:href => ""}
+                              = image_tag 'lt-sm-4.jpg'
+                          .img-content
+                            %p
+                              %a{:href => ""} These sentences are selected from various online news.
+                            %span February 11, 2019
       .col-lg-4.col-md-12
         .row
           .col-md-12
             = render 'shared/follow_us_sidebar'
-
-
