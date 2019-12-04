@@ -20,46 +20,24 @@
                     .row
                       .col-md-6
                         .lt-item-bg
-                          = image_tag category.articles.last.image.variant(resize_to_fill: [500, 326], gravity: 'center'), class: 'img-fluid'
+                          = link_to article_path(category.articles.last) do
+                            = image_tag category.articles.last.image.variant(resize_to_fill: [500, 326], gravity: 'center'), class: 'img-fluid'
                           %h6
                             = link_to category.articles.last.title, article_path(category.articles.last)
                           %ul.list-unstyled.list-inline
                             %li.list-inline-item= category.name
                             %li.list-inline-item February 11, 2019
-                          = category.articles.last.body
+                          =# category.articles.last.body
                       .col-md-6
-                        .lt-item-sm.d-flex
-                          .lt-img
-                            %a{:href => ""}
-                              = image_tag 'lt-sm-1.jpg'
-                          .img-content
-                            %p
-                              %a{:href => ""} These sentences are selected from various online news.
-                            %span February 11, 2019
-                        .lt-item-sm.d-flex
-                          .lt-img
-                            %a{:href => ""}
-                              = image_tag 'lt-sm-2.jpg'
-                          .img-content
-                            %p
-                              %a{:href => ""} These sentences are selected from various online news.
-                            %span February 11, 2019
-                        .lt-item-sm.d-flex
-                          .lt-img
-                            %a{:href => ""}
-                              = image_tag 'lt-sm-3.jpg'
-                          .img-content
-                            %p
-                              %a{:href => ""} These sentences are selected from various online news.
-                            %span February 11, 2019
-                        .lt-item-sm.d-flex
-                          .lt-img
-                            %a{:href => ""}
-                              = image_tag 'lt-sm-4.jpg'
-                          .img-content
-                            %p
-                              %a{:href => ""} These sentences are selected from various online news.
-                            %span February 11, 2019
+                        - category.articles.each do |article|
+                          .lt-item-sm.d-flex
+                            .lt-img
+                              = link_to article_path(article) do
+                                = image_tag category.articles.last.image.variant(resize_to_fill: [101, 81], gravity: 'center')
+                            .img-content
+                              %p
+                                = link_to article.title, article_path(article)
+                              %span February 11, 2019
       .col-lg-4.col-md-12
         .row
           .col-md-12
