@@ -10,23 +10,23 @@
                   %h5 Últimas noticias
                 / Nav tabs
                 %ul.nav.nav-tabs{:role => "tablist"}
-                  - Category.all.each_with_index do |category, index|
+                  - @categories.each_with_index do |category, index|
                     %li.nav-item
                       %a.nav-link{"data-toggle" => "tab", :href => "##{category.slug}", class: index == 0 ? 'active' : ''}= category.name
               / Tab panes
               .tab-content
-                - Category.all.each_with_index do |category, index|
+                - @categories.each_with_index do |category, index|
                   .tab-pane.fade.show{:role => "tabpanel", id: category.slug, class: index == 0 ? 'active' : ''}
                     .row
                       .col-md-6
                         .lt-item-bg
-                          = image_tag 'lt-bg-1.jpg', class: 'img-fluid'
+                          = image_tag category.articles.last.image.variant(resize_to_fill: [500, 326], gravity: 'center'), class: 'img-fluid'
                           %h6
-                            %a{:href => ""} These sentences are selected from various online news.
+                            = link_to category.articles.last.title, article_path(category.articles.last)
                           %ul.list-unstyled.list-inline
                             %li.list-inline-item= category.name
                             %li.list-inline-item February 11, 2019
-                          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque labore, quam voluptatibus ipsum. Exde tenetur, quasi, provident animi magni voluptas fugit Itaque labore quae ad........
+                          = category.articles.last.body
                       .col-md-6
                         .lt-item-sm.d-flex
                           .lt-img

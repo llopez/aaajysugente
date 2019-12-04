@@ -3,6 +3,8 @@ class Category < ApplicationRecord
 
   validates :name, presence: true
 
+  scope :with_articles, -> { joins(:articles).distinct }
+
   def slug
     name.split.join('-')
   end
