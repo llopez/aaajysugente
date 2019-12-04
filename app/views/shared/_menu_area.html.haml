@@ -32,7 +32,7 @@
                 - Category.all.each do |category|
                   %li= link_to category.name, "#"
             %li.list-inline-item
-              %a{:href => ""} ¿QUIENES SOMOS?
+              = link_to '¿QUIENES SOMOS?', about_path
       .col-md-3
         .clock.text-right
           %span#dg-clock
