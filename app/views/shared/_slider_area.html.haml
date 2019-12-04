@@ -5,7 +5,7 @@
         .owl-carousel.owl-slider
           - @articles.each do |article|
             .slider-content
-              = image_tag article.image, class: 'img-fluid'
+              = image_tag article.image.variant(resize_to_fill: [1000, 639], gravity: 'center'), class: 'img-fluid'
               .slider-layer
                 %p
                   = link_to article.title, article_path(article)
@@ -23,18 +23,10 @@
       .col-lg-4.col-md-12.slider-fix
         - @articles.take(2).each_with_index do |article, index|
           .slider-sidebar{class: index.zero? ? 'sidebar-o' : ''}
-            = image_tag article.image, class: 'img-fluid'
+            = image_tag article.image.variant(resize_to_fill: [500, 327], gravity: 'center'), class: 'img-fluid'
             .sidebar-layer
               %p
                 = link_to article.title, article_path(article)
               %ul.list-unstyled.list-inline
                 %li.list-inline-item TECHNOLOGY
                 %li.list-inline-item February 11, 2019
-        .slider-sidebar
-          = image_tag 'sl-sidebar-2.jpg', class: 'img-fluid'
-          .sidebar-layer
-            %p
-              %a{:href => ""} These sentences are selected from various online news.
-            %ul.list-unstyled.list-inline
-              %li.list-inline-item HEALTH
-              %li.list-inline-item February 11, 2019

@@ -62,3 +62,4 @@ gem "aws-sdk-s3", require: false
 gem "figaro"
 #gem 'activeadmin_froala_editor'
 gem 'activeadmin_medium_editor'
+gem 'image_processing'

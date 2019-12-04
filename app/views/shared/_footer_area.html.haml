@@ -24,19 +24,11 @@
             .post-box.d-flex
               .post-img
                 = link_to article_path(article) do
-                  = image_tag article.image
+                  = image_tag article.image.variant(resize_to_fill: [100, 100], gravity: 'center')
               .post-con
                 %p
                   = link_to article.title.truncate(25), article_path(article)
                 %span Feb 11, 2019
-          .post-box.d-flex
-            .post-img
-              %a{:href => ""}
-                = image_tag 'post3.jpg'
-            .post-con
-              %p
-                %a{:href => "#"} Lorem ipsum dolor sit...
-              %span Feb 11, 2019
       .col-md-4
         .f-newsltr
           .sec-title
