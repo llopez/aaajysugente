@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   get 'about' => 'pages#about'
 
+  get ':id' => 'home#show', as: 'home_category'
+
   resources :articles, only: :show
 end

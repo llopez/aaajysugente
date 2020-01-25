@@ -10,7 +10,7 @@
                 %i.fa.fa-angle-down
               %ul.dropdown.list-unstyled
                 - Category.all.each do |category|
-                  %li= link_to category.name, "#"
+                  %li= link_to category.name, home_category_path(category)
             %li.list-inline-item
               %a
                 FUTBOL PROFESIONAL
@@ -30,7 +30,7 @@
                 -#     %li
                 -#       %a{:href => "08-category-four.html"} Category Style 4
                 - Category.all.each do |category|
-                  %li= link_to category.name, "#"
+                  %li= link_to category.name, home_category_path(category)
             %li.list-inline-item
               = link_to '¿QUIENES SOMOS?', about_path
       .col-md-3
