@@ -1,22 +1,21 @@
 %footer.footer-area
   .container
     .row
-      .col-md-4
+      .col-md-6
         .f-about
           = image_tag 'logo.png'
-          %p Lorem ipsum dolor sit amet, consectet adipisicing elit. Saepe porro neque a nam nulla quos atque.
           %ul.list-unstyled.f-contact
             %li
-              %i.fa.fa-map-marker>
-              795 South Park Avenue, CA 94107
+              %i.fa.fa-map-marker
+              Av. Gral. Paz 3755, Villa Lynch, Buenos Aires
             %li
-              %i.fa.fa-envelope>
+              %i.fa.fa-envelope
               enquery@domain.com
             %li
-              %i.fa.fa-phone>
+              %i.fa.fa-phone
               +1 908 875 7678
           = render 'shared/follow_us_footer'
-      .col-md-4
+      .col-md-6
         .f-post
           .sec-title
             %h5 Últimas publicaciones
@@ -29,11 +28,11 @@
                 %p
                   = link_to article.title.truncate(25), article_path(article)
                 %span Feb 11, 2019
-      .col-md-4
-        .f-newsltr
-          .sec-title
-            %h5 Newsletter
-          %form.news-letter{:action => "#"}
-            %input{:name => "name", :placeholder => "Your name", :type => "text", :value => ""}
-              %input{:name => "email", :placeholder => "Your email address", :type => "text", :value => ""}
-                %button{:name => "button", :type => "button"} Register
+      -# .col-md-4
+      -#   .f-newsltr
+      -#     .sec-title
+      -#       %h5 Newsletter
+      -#     %form.news-letter{:action => "#"}
+      -#       %input{:name => "name", :placeholder => "Your name", :type => "text", :value => ""}
+      -#         %input{:name => "email", :placeholder => "Your email address", :type => "text", :value => ""}
+      -#           %button{:name => "button", :type => "button"} Register
