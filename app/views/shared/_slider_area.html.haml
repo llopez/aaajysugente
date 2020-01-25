@@ -10,8 +10,9 @@
                 %p
                   = link_to article.title, article_path(article)
                 %ul.list-unstyled.list-inline
-                  %li.list-inline-item SPORTS
-                  %li.list-inline-item February 11, 2019
+                  - article.categories.each do |category|
+                    %li.list-inline-item= category.name.upcase
+                  %li.list-inline-item= article.created_at.strftime("%B %d, %Y")
           .slider-content
             = image_tag 'slider-3.jpg', class: 'img-fluid'
             .slider-layer
@@ -28,5 +29,6 @@
               %p
                 = link_to article.title, article_path(article)
               %ul.list-unstyled.list-inline
-                %li.list-inline-item TECHNOLOGY
-                %li.list-inline-item February 11, 2019
+                - article.categories.each do |category|
+                  %li.list-inline-item= category.name.upcase
+                %li.list-inline-item= article.created_at.strftime("%B %d, %Y")

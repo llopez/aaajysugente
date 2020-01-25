@@ -25,8 +25,9 @@
                           %h6
                             = link_to category.articles.last.title, article_path(category.articles.last)
                           %ul.list-unstyled.list-inline
-                            %li.list-inline-item= category.name
-                            %li.list-inline-item February 11, 2019
+                            - category.articles.last.categories.each do |category|
+                              %li.list-inline-item= category.name.upcase
+                            %li.list-inline-item= category.articles.last.created_at.strftime("%B %d, %Y")
                           =# category.articles.last.body
                       .col-md-6
                         - category.articles.each do |article|
@@ -37,7 +38,7 @@
                             .img-content
                               %p
                                 = link_to article.title, article_path(article)
-                              %span February 11, 2019
+                              %span= article.created_at.strftime("%B %d, %Y")
       .col-lg-4.col-md-12
         .row
           .col-md-12
