@@ -10,27 +10,9 @@
                 %i.fa.fa-angle-down
               %ul.dropdown.list-unstyled
                 - Category.all.each do |category|
-                  %li= link_to category.name, home_category_path(category)
+                  %li= link_to category.name, home_category_path(category.slug)
             %li.list-inline-item
-              %a
-                FUTBOL PROFESIONAL
-                %i.fa.fa-angle-down
-              %ul.dropdown.list-unstyled
-                -# %li
-                -#   %a
-                -#     Category
-                -#     %i.fa.fa-angle-right
-                -#   %ul.dropdown-sub.list-unstyled
-                -#     %li
-                -#       %a{:href => "05-category-one.html"} Category Style 1
-                -#     %li
-                -#       %a{:href => "06-category-two.html"} Category Style 2
-                -#     %li
-                -#       %a{:href => "07-category-three.html"} Category Style 3
-                -#     %li
-                -#       %a{:href => "08-category-four.html"} Category Style 4
-                - Category.all.each do |category|
-                  %li= link_to category.name, home_category_path(category)
+              = link_to "FUTBOL PROFESIONAL", home_category_path('futbol-profesional')
             %li.list-inline-item
               = link_to '¿QUIENES SOMOS?', about_path
       .col-md-3

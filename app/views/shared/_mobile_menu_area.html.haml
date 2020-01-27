@@ -11,9 +11,6 @@
                 %a INICIO
                 %ul.list-unstyled
                   - Category.all.each do |category|
-                    %li= link_to category.name, home_category_path(category)
+                    %li= link_to category.name, home_category_path(category.slug)
               %li
-                %a FUTBOL PROFESIONAL
-                %ul.list-unstyled
-                  - Category.all.each do |category|
-                    %li= link_to category.name, home_category_path(category)
+                = link_to "FUTBOL PROFESIONAL", home_category_path('futbol-profesional')

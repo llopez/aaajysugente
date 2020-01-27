@@ -5,7 +5,7 @@ class Category < ApplicationRecord
 
   scope :with_articles, -> { joins(:articles).distinct }
 
-  def slug
-    name.split.join('-')
+  before_save do
+    self.slug = name.split.join('-').downcase
   end
 end

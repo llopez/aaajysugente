@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   end
 
   def show
-    category = Category.find(params[:id])
+    category = Category.find_by(slug: params[:slug])
     @categories = Category.with_articles
     @articles = category.articles
 
