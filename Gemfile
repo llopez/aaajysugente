@@ -63,3 +63,4 @@ gem "figaro"
 #gem 'activeadmin_froala_editor'
 gem 'activeadmin_medium_editor'
 gem 'image_processing'
+gem 'rails-i18n', '~> 6.0.0'

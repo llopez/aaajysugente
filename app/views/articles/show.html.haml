@@ -25,7 +25,7 @@
                   %a{:href => "#"} Administrador
                 %li.list-inline-item
                   %i.fa.fa-calendar
-                  = @article.created_at.strftime("%B %d, %Y")
+                  = l(@article.created_at, format: "%B %d, %Y")
                 -# %li.list-inline-item
                 -#   %i.fa.fa-commenting-o
                 -#   %a{:href => "#"} (09 Comments)

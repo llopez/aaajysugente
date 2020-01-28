@@ -12,7 +12,7 @@
                 %ul.list-unstyled.list-inline
                   - article.categories.each do |category|
                     %li.list-inline-item= category.name.upcase
-                  %li.list-inline-item= article.created_at.strftime("%B %d, %Y")
+                  %li.list-inline-item= l(article.created_at, format: "%B %d, %Y")
       .col-lg-4.col-md-12.slider-fix
         - @articles.take(2).each_with_index do |article, index|
           .slider-sidebar{class: index.zero? ? 'sidebar-o' : ''}
@@ -23,4 +23,4 @@
               %ul.list-unstyled.list-inline
                 - article.categories.each do |category|
                   %li.list-inline-item= category.name.upcase
-                %li.list-inline-item= article.created_at.strftime("%B %d, %Y")
+                %li.list-inline-item= l(article.created_at, format: "%B %d, %Y")
